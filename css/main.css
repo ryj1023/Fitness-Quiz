@@ -1,0 +1,97 @@
+body{
+	font-family: 'Bangers', cursive;
+	background-image: url('barbell.jpg');
+	background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container{
+	background-image: url('website-background.gif');
+    height: 450px;
+    width: 400px;
+	margin: auto;
+	margin-top: 100px;
+    position: center;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: white;
+    
+
+}
+
+.display{
+	text-align: center;
+	padding-top: 6%;
+}
+h1{
+	font-size: 50px;
+	color: white;
+}
+ p {
+	font-size: 40px;
+	color: white;
+}
+
+#button {
+	border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+.startButton{
+	background-color: black;
+	color: white;
+	border-radius: 25px;
+	font-size: 35px;
+    margin: 40px 2px;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+	padding: 16px 32px;
+    text-align: center;
+}
+
+.startButton:hover{
+	background-color: white;
+	color: black;
+}
+
+.weights{
+	background-image: url('website-background.gif');
+	height: 450px;
+	width: 150px;
+	border-radius: 25px;
+    border-style: solid;
+    border-color: white;
+	float: right;
+	margin-top: auto;
+	margin-right: 50px
+
+
+}
+
+.johnnyContainer{
+	background-image: url('website-background.gif');
+    height: 450px;
+    width: 270px;
+	margin-top: auto;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: white;
+    float: left;
+    margin-left: 50px;
+}
+.johnny{
+	height: 200px;
+	width: 200px;
+	padding-top: 140px;
+	padding-left: 40px;
+	
+}
+
