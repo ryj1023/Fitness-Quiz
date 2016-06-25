@@ -1,0 +1,132 @@
+@black: #000000;
+@white: #FFFFFF;
+
+.customPosition{
+	height: 200px;
+	width: 200px;
+	padding-top: 140px;
+	padding-left: 40px;
+
+}
+
+.buttonProperties{
+	text-align: center;
+	cursor: pointer;
+    font-family: 'Bangers', cursive;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border: none;
+    color: white;
+}
+
+
+body{
+	font-family: 'Bangers', cursive;
+	background-image: url('barbell.jpg');
+	background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container{
+	background-image: url('website-background.gif');
+    height: 450px;
+    width: 400px;
+	margin: auto;
+	margin-top: 100px;
+    position: center;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: @white;
+    
+
+}
+
+#introDisplay, #question1{
+	text-align: center;
+	padding-top: 2%;
+}
+h1{
+	font-size: 47px;
+	color: @white;
+}
+ p {
+	font-size: 40px;
+	color: @white;
+}
+
+span {
+	font-size: 30px;
+	color: yellow;
+}
+.answer{
+
+	display: inline-block;
+	text-align: justify;
+}
+
+#button {
+	.buttonProperties;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+   
+}
+.submit{
+	.buttonProperties;
+	background-color: @black;
+    border-radius: 25px;
+    font-size: 32px;
+
+	   &:hover{
+		background-color: @white;
+		color: black;
+	}
+    
+}
+.startButton{
+	background-color: @black;
+	color: @white;
+	border-radius: 25px;
+	font-size: 35px;
+    margin: 40px 2px;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+	padding: 16px 32px;
+    text-align: center;
+	
+		&:hover{
+		background-color: white;
+		color: black;
+	}
+
+}
+
+.weights{
+	background-image: url('website-background.gif');
+	height: 450px;
+	width: 150px;
+	border-radius: 25px;
+    border-style: solid;
+    border-color: white;
+	float: right;
+	margin-top: auto;
+	margin-right: 50px
+
+
+}
+
+.johnnyContainer{
+	background-image: url('website-background.gif');
+    height: 450px;
+    width: 270px;
+	margin-top: auto;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: @white;
+    float: left;
+    margin-left: 50px;
+}
+.johnny, .johnny2, .johnny3{
+	.customPosition;	
+}
