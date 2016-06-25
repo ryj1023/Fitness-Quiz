@@ -1,5 +1,5 @@
 
-var $ = require('jquery');
+let $ = require('jquery');
 import * as fitness from '../quiz/fitness'
 $(document).ready(function(){
  $('#question1').hide();
@@ -18,5 +18,6 @@ $("#submit").click(fitness.userSelect);
 
 
 fitness.buildForm();
+
 
 });

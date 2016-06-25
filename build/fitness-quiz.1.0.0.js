@@ -94,6 +94,7 @@
 	var running = exports.running = 0;
 	var currentQuestion = exports.currentQuestion = 0;
 	var correctAnswers = exports.correctAnswers = 0;
+	var questionObject = exports.questionObject = 0;
 	
 	//question and answer object array
 	
@@ -105,13 +106,9 @@
 	function userSelect() {
 	
 		if (running == 1) return;
-	
 		var questionObject = questions[currentQuestion];
-		console.log(questionObject);
-	
 		var input = $('input[name="choice"]')[questionObject.correctAnswer];
 		console.log(input);
-	
 		var checked = 0;
 	
 		for (var i = 0; i < $('input[name="choice"]').length; i++) {
@@ -121,7 +118,6 @@
 	
 		if (checked == 0) {
 			alert("Please select a choice.");
-	
 			return;
 		}
 	
@@ -133,13 +129,10 @@
 	
 		if (questions.length > currentQuestion) exports.currentQuestion = currentQuestion += 1;
 	
-		console.log(correctAnswers, currentQuestion);
-	
 		if (currentQuestion < questions.length) buildForm();else {
 	
 			displayTotal();
 		}
-	
 		return correctAnswers;
 	};
 	
@@ -147,6 +140,7 @@
 	
 	function buildForm() {
 		var questionObject = questions[currentQuestion];
+		console.log(questionObject.question);
 		$("#title").html(questionObject.question);
 		$('.answer').html("");
 		for (var i = 0; i < 4; i++) {
@@ -161,7 +155,7 @@
 		$('.answer').html("");
 		$('#submit').hide();
 		$('#title').html("You got" + " " + correctAnswers + " " + "right! Press OK to play again.");
-		playAgain = '<button class="submit">OK</button>';
+		var playAgain = '<button class="submit">OK</button>';
 		$('#ok').show();
 		$("#ok").click(resetForm);
 		$('.johnny2').hide();
@@ -171,8 +165,8 @@
 	//new game
 	
 	function resetForm() {
-		exports.currentQuestion = currentQuestion = 0;
-		exports.correctAnswers = correctAnswers = 0;
+		var currentQuestion = 0;
+		var correctAnswers = 0;
 		$('.dumbbells').html("");
 		$('#ok').hide();
 		$('#title').html("");
@@ -181,10 +175,12 @@
 		$('.johnny2').hide();
 		$('.johnny3').hide();
 		$('.johnny').show();
-		introMessage = '<h1>Fitness Quiz</h1><p class="Questions">Are you ready to play?</p>';
+		var introMessage = '<h1>Fitness Quiz</h1><p class="Questions">Are you ready to play?</p>';
 		$('#title').append(introMessage);
 		$("#submit").show();
 		buildForm();
+	
+		return currentQuestion;
 	}
 
 /***/ },
