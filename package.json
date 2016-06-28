@@ -5,7 +5,7 @@
   "main": "js/index.js",
   "scripts": {
     "mkdir": "mkdir -p build",
-    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:image && npm run build:jsdev",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:image && npm run build:js",
     "watch": "npm run watch:html & npm run watch:css & npm run watch:js",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp index.html build/",
@@ -15,7 +15,6 @@
     "watch:css": "npm run watch:css:unminified & npm run watch:css:minified",
     "clean:css": "npm run clean:css:unminified && npm run clean:css:minified",
     "build:js": "npm run build:js:unminified && npm run build:js:minified",
-    "build:jsdev": "npm run build:js:unminified",
     "watch:js": "npm run watch:js:unminified & npm run watch:js:minified",
     "clean:js": "npm run clean:js:unminified && npm run clean:js:minified",
     "build:js:unminified": "npm run clean:js:unminified && webpack",

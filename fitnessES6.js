@@ -1,9 +1,12 @@
+/*
+//test es6 code
+
 //define variables
 let $ = require('jquery');
 export let running = 0;
 export let currentQuestion = 0;
 export let correctAnswers = 0;
-
+export let questionObject = 0;
  
 
 //question and answer object array
@@ -22,7 +25,9 @@ export function userSelect(){
 
 	if(running == 1)
 		return;
-	let questionObject = questions[currentQuestion];
+	let [currentQuestion] = questionObject; //questions[0]
+	console.log(currentQuestion);
+
 	let input = $('input[name="choice"]')[questionObject.correctAnswer]
 	console.log(input);
 	let checked = 0;
@@ -65,7 +70,8 @@ export function userSelect(){
 //append answers
 
 export function buildForm (){
-let questionObject = questions[currentQuestion];
+this.questionObject = questions[currentQuestion];
+console.log(questionObject.question);
 $("#title").html(questionObject.question);
 	$('.answer').html("");
 	for(let i=0; i < 4; i++)
@@ -81,6 +87,7 @@ export function displayTotal(){
 	$('.answer').html("");
 	$('#submit').hide();
 	$('#title').html("You got" + " " + correctAnswers + " "+ "right! Press OK to play again.");
+	let playAgain = '<button class="submit">OK</button>'
 	$('#ok').show();
 	$("#ok").click(resetForm);
 	$('.johnny2').hide();
@@ -90,8 +97,8 @@ export function displayTotal(){
 //new game
 
 export function resetForm(){
-	currentQuestion = 0;
-    correctAnswers = 0; 
+	let currentQuestion = 0;
+    let correctAnswers = 0; 
     $('.dumbbells').html("");
     $('#ok').hide();
     $('#title').html("");
@@ -107,10 +114,4 @@ export function resetForm(){
 
     return currentQuestion;
 
-    
-}
-
-    
-
-
-
+    */
