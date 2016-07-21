@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="qCtrl">
   <head>
     <meta charset="UTF-8">
     <title>How Fit Are You?</title>
     <link rel="stylesheet" href="fitness-quiz.1.0.0.css">
     <link href='https://fonts.googleapis.com/css?family=Candal|Covered+By+Your+Grace|Bangers' rel='stylesheet' type='text/css'>
-  </head>
-  <div class="johnnyContainer">
-    <img class="johnny" src="JohnnyBravoIntro.gif">
-    <img class="johnny2" src="Johnnyb012.gif">
-    <img class="johnny3" src="johnny3.gif">
-  </div>
-  <ul class="weights">
-    <li class='dumbbells'>
-    </li>
-  </ul>
-  <div class="container">
-    <div id="introDisplay">
-      <h1>Fitness Quiz</h1>
-      <p class="Questions">Are you ready to play?</p>
-      <div id="button">
-        <button class="startButton">Get Started</button>
-      </div>
-    </div>
-    <div id="question1">
-      <h1 id="title"></h1>
-      <p></p>
-      <div class="answer">
-      </div>
-      <br>
-      <button id="submit"class="submit">Submit</button>
-      <button id= "ok" class="submit">OK</button>
-    </div>
-  </div>
-  <body>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="fitness-quiz.1.0.0.js"></script>
+  </head>
+  <body class="background" ng-style="myStyle={'background-image':'url(' + randImage.url + ')'}">
+    <div>
+      <div class="johnnyContainer">
+        <img class="johnny" src="JohnnyBravoIntro.gif" ng-show="!startGame">
+        <img class="johnny2" src="Johnnyb012.gif" ng-show="startGame && hasQuestion()">
+        <img class="johnny3" src="johnny3.gif" ng-show="startGame && !hasQuestion()">
+      </div>
+      <ul class="weights">
+        <li class='dumbbells'>
+        </li>
+      </ul>
+      <div class="container">
+        <div ng-show="!startGame"  id="introDisplay">
+          <h1>{{heading}}</h1>
+          <p class="Questions">{{subheading}}</p>
+          <div id="button">
+            <button ng-click="newGame() && searchFlickr()" class="startButton">{{start}}</button>
+          </div>
+        </div>
+        <div id="question1">
+          <div ng-show="startGame && hasQuestion();">
+            <h1 id="title">{{currentQuestion.question}}</h1>
+            <p></p>
+            <div class="answer" ng-repeat="answer in currentQuestion.answers">
+            <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option"><span>{{answer}}</span>
+            </div>
+            <button id="submit" class="submit" ng-click="submitAnswer() && randomImage()">Submit</button>
+            
+        </div>
+        <div ng-show="startGame && !hasQuestion()"> 
+          
+          <p>your score is {{countCorrect}}. Let's play again!</p>
+          <button id= "ok" class="submit" ng-click="newGame()">OK</button>
+          </div>  
+        </div>
+      </div>
+    </div>
   </body>
+    
 </html>

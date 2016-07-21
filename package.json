@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/ryj1023/Fitness-Quiz#readme",
   "dependencies": {
+    "angular": "^1.5.7",
     "jquery": "^3.0.0"
   },
   "devDependencies": {

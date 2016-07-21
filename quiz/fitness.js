@@ -1,4 +1,5 @@
 //define variables
+let angular = require('angular');
 let $ = require('jquery');
 export let running = 0;
 export let currentQuestion = 0;
@@ -80,7 +81,7 @@ $("#title").html(questionObject.question);
 export function displayTotal(){
 	$('.answer').html("");
 	$('#submit').hide();
-	$('#title').html("You got" + " " + correctAnswers + " "+ "right! Press OK to play again.");
+	$('#title').html("You got" + " " + correctAnswers + " "+ "right! Let's play again!");
 	$('#ok').show();
 	$("#ok").click(resetForm);
 	$('.johnny2').hide();
@@ -109,6 +110,8 @@ export function resetForm(){
 
     
 }
+
+
 
     
 

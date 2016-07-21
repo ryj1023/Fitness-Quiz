@@ -1,6 +1,10 @@
 @black: #000000;
 @white: #FFFFFF;
 
+.background{
+	background-color: black;
+}
+
 .customPosition{
 	height: 200px;
 	width: 200px;
@@ -20,12 +24,14 @@
 }
 
 
-body{
+.background{
 	font-family: 'Bangers', cursive;
-	background-image: url('barbell.jpg');
 	background-repeat: no-repeat;
     background-position: top center;
+    background-size: cover;
 }
+
+
 
 .container{
 	background-image: url('website-background.gif');
@@ -58,10 +64,10 @@ span {
 	font-size: 30px;
 	color: yellow;
 }
-.answer{
 
-	display: inline-block;
+.answer{
 	text-align: justify;
+	padding-left: 32%;
 }
 
 #button {
@@ -130,3 +136,4 @@ span {
 .johnny, .johnny2, .johnny3{
 	.customPosition;	
 }
+

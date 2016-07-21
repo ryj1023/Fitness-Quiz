@@ -1,3 +1,6 @@
+.background {
+  background-color: black;
+}
 .customPosition {
   height: 200px;
   width: 200px;
@@ -13,11 +16,11 @@
   border: none;
   color: white;
 }
-body {
+.background {
   font-family: 'Bangers', cursive;
-  background-image: url('barbell.jpg');
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
 }
 .container {
   background-image: url('website-background.gif');
@@ -48,8 +51,8 @@ span {
   color: yellow;
 }
 .answer {
-  display: inline-block;
   text-align: justify;
+  padding-left: 32%;
 }
 #button {
   text-align: center;
