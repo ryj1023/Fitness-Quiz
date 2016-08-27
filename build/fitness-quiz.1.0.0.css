@@ -1,5 +1,5 @@
 .background {
-  background-color: black;
+  background-image: url('barbell.jpg');
 }
 .customPosition {
   height: 200px;
@@ -10,14 +10,12 @@
 .buttonProperties {
   text-align: center;
   cursor: pointer;
-  font-family: 'Bangers', cursive;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border: none;
   color: white;
 }
 .background {
-  font-family: 'Bangers', cursive;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -25,7 +23,7 @@
 .container {
   background-image: url('website-background.gif');
   height: 450px;
-  width: 400px;
+  width: 450px;
   margin: auto;
   margin-top: 100px;
   position: center;
@@ -33,8 +31,12 @@
   border-style: solid;
   border-color: #FFFFFF;
 }
-#introDisplay,
 #question1 {
+  text-align: center;
+  padding-top: 2%;
+  margin-top: 0%;
+}
+#introDisplay {
   text-align: center;
   padding-top: 2%;
 }
@@ -43,21 +45,23 @@ h1 {
   color: #FFFFFF;
 }
 p {
-  font-size: 40px;
+  font-size: 30px;
   color: #FFFFFF;
+  margin: 18px;
+  text-align: center;
+  margin-top: 3%;
 }
 span {
   font-size: 30px;
   color: yellow;
 }
 .answer {
-  text-align: justify;
-  padding-left: 32%;
+  text-align: left;
+  padding-left: 5%;
 }
 #button {
   text-align: center;
   cursor: pointer;
-  font-family: 'Bangers', cursive;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border: none;
@@ -70,7 +74,6 @@ span {
 .submit {
   text-align: center;
   cursor: pointer;
-  font-family: 'Bangers', cursive;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border: none;
@@ -78,6 +81,7 @@ span {
   background-color: #000000;
   border-radius: 25px;
   font-size: 32px;
+  margin-top: 2%;
 }
 .submit:hover {
   background-color: #FFFFFF;
@@ -88,9 +92,7 @@ span {
   color: #FFFFFF;
   border-radius: 25px;
   font-size: 35px;
-  margin: 40px 2px;
   cursor: pointer;
-  font-family: 'Bangers', cursive;
   padding: 16px 32px;
   text-align: center;
 }
@@ -98,10 +100,14 @@ span {
   background-color: white;
   color: black;
 }
-.weights {
+#input-box {
+  height: 28px;
+  width: 30%;
+}
+.food-calculator {
   background-image: url('website-background.gif');
   height: 450px;
-  width: 150px;
+  width: 250px;
   border-radius: 25px;
   border-style: solid;
   border-color: white;
@@ -109,7 +115,7 @@ span {
   margin-top: auto;
   margin-right: 50px;
 }
-.johnnyContainer {
+.workouts {
   background-image: url('website-background.gif');
   height: 450px;
   width: 270px;
@@ -120,6 +126,19 @@ span {
   float: left;
   margin-left: 50px;
 }
+a {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 20px;
+  color: yellow;
+  cursor: pointer;
+  line-height: 5;
+  margin-left: 4%;
+  text-decoration: none;
+  padding: 6%;
+  background-color: gray;
+  border-radius: 25px;
+}
 .johnny,
 .johnny2,
 .johnny3 {
@@ -127,5 +146,8 @@ span {
   width: 200px;
   padding-top: 140px;
   padding-left: 40px;
+}
+#article {
+  z-index: 1;
 }
 /*# sourceMappingURL=fitness-quiz.1.0.0.css.map */
