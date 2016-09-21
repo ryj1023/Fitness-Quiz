@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>How Fit Are You?</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="fitness-quiz.1.0.0.css">
     <link href='https://fonts.googleapis.com/css?family=Candal|Covered+By+Your+Grace|Bangers' rel='stylesheet' type='text/css'>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -10,69 +11,72 @@
     <script src="../node_modules/angular-route/angular-route.js"></script>
     <base href="/Fitness-Quiz-2.0/Fitness-Quiz/build/">
   </head>
-  <!--body class="background" ng-style="myStyle={'background-image':'url(' + randImage.url + ')'}"-->
   <body class="background">
-  <div ng-view></div>
-    <div>
-      <div class="workouts" ng-show="startGame && !hasQuestion()">
-        <p>Here are some workouts just for you!</p>
-          <a href={{programs[0]}} target="_blank">Low Intensity Workout</a><br />
-          <a href={{programs[1]}} target="_blank">Medium Intensity Workout</a><br />
-          <a href={{programs[2]}} target="_blank">High Intensity Workout</a><br />
-      </div>
-      <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights">
-        <form method="get" ng-submit="submitFood()">
-          <input list="foods" name="foods" ng-model="foodInput">
-          <datalist id="foods">
-            <option ng-repeat="food in foodFacts" value="{{food.name}}">{{food.name}}</option>
-          </datalist>
-          <input type="submit">
-        </form>
-          <p ng-repeat="nutrient in food.nutrients">
-          <span ng-show="showNutrients(nutrient)">{{nutrient.name}}</span>
-        </p>
-
-      <!--div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" ng-repeat="food in foodFacts">
-        <p>{{food.name}}</p>
-        <p ng-repeat="nutrient in food.nutrients">
-          <span ng-show="showNutrients(nutrient)">{{nutrient.name}}</span>
-        </p>
-      </div-->
+  <div class="header">
+      <h1 class="title">Let's Get Fit</h1>
+    </div>
+      <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
+        <p id="food-search-heading">Search foods and select a workout</p>
+          <div class="input-wrapper">
+            <form method="get" ng-submit="selectFood()" class="food-search">
+              <input ng-change="submitFood()" id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
+              <!--button type="submit">submit</button-->
+            </form>
+            <form>
+              <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
+                <option value="Workouts" disabled selected>Workouts</option>
+                <option value="{{programs[0]}}">Low Intensity</option>
+                <option value="{{programs[1]}}">Medium Intensity</option>
+                <option value="{{programs[2]}}">High Intensity</option>
+              </select>
+            </form>
+           </div> 
+        <div ng-show="!foodObject">
+           <ul ng-repeat="food in foodFacts" class="list-group">
+            <li id="food-list" class="list-group-item list-group-item-info" data-value="{{food.foodId}}" ng-click="getNutritionFacts(food.foodId)">{{food.foodName}}</li>
+          </ul>
+        </div>
+        <div ng-show="foodObject">
+          <p id="nutrient-heading">Nutrients Per Cup </p>
+          <ul id="nutrient-list" class="list-group" ng-show="showNutrients(nutrient)" ng-repeat="nutrient in foodObject.nutrients">
+            <li class="list-group-item list-group-item-info">{{nutrient.name}}</li>
+            <li class="list-group-item list-group-item-warning">{{nutrient.value}}{{nutrient.unit}}</li> 
+          </ul>
+           <button class="back-button" ng-click="foodObject = null">back</button>
+        </div>
       </div>
       <div class="container">
         <div ng-show="!startGame"  id="introDisplay">
           <h1 id="h1">{{heading}}</h1>
           <p class="Questions">{{subheading}}</p>
           <div id="button">
-            <button ng-click="newGame() && searchFlickr()" class="startButton">{{start}}</button>
+            <button ng-click="newGame()" class="startButton">{{start}}</button>
           </div>
         </div>
         <div id="question1">
           <div ng-show="startGame && hasQuestion();">
-            <h1 id="title">{{currentQuestion.question}}</h1>
-              <form ng-submit="submitAnswer() && resetPlaceholder()">
-                <div class="answer" ng-repeat="answer in currentQuestion.answers">
-                <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option">
-                <span>{{answer}}</span>
-                </div>
-                <input id="input-box" ng-show="input" ng-model="numbers" name='choice' type="text" class="option">
-                <button id="submit" class="submit">Submit</button> 
-            </form>
-        </div>
-        <div ng-show="startGame && !hasQuestion()"> 
-          <p>Your daily calorie intake must be: {{calories}} cal</p>
-          <p>Your daily protein intake must be: {{protein}}gs</p>
-          <p>Your daily carbohydrate intake must be: {{carbohydrates}}gs</p>
-          <p>Your daily healthy fat intake must be: {{fats}}gs</p>
-          <button id= "ok" class="submit" ng-click="newGame()">New Plan</button>
-          </div>  
-        </div>
+              <h1 id="title">{{currentQuestion.question}}</h1>
+                <form ng-submit="submitAnswer()">
+                  <div class="answer" ng-repeat="answer in currentQuestion.answers">
+                  <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option" placeholder="select a value">
+                  <span>{{answer}}</span>
+                  </div>
+                  <input id="input-box-one" ng-show="input" ng-model="numbers" name='choice' type="text" class="option" placeholder="please enter a number">
+                  <input id="input-box-two" ng-show="input2" ng-model="numbersTwo" name='choice' type="text" class="option-two">
+                  <button id="submit" class="submit">Submit</button> 
+              </form>
+            </div> 
+                <div ng-show="startGame && !hasQuestion()" id="results-div"> 
+                <h1 id="results-heading">Your recommended daily nutrient intake</h1>
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-success">Calories: {{calories}}cal</li>
+                    <li class="list-group-item list-group-item-info">Protein: {{protein}}gs</li>
+                    <li class="list-group-item list-group-item-warning">Carbohydrates: {{carbohydrates}}gs</li>
+                    <li class="list-group-item list-group-item-danger">Fats: {{fats}}gs</li>
+                  </ul>
+                  <button id= "ok" class="submit" ng-click="newGame()">New Plan</button>
+                </div> 
+            </div>
       </div>
-    </div>
-
-    <div>
-    <h1 id=”article”></h1>
-    </div>
-  </body>
-    
+  </body>  
 </html>

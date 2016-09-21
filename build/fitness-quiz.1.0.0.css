@@ -7,6 +7,20 @@
   padding-top: 140px;
   padding-left: 40px;
 }
+.header {
+  background-image: url('website-background.gif');
+  height: 75px;
+  width: 40%;
+  margin: 2% 30%;
+  position: center;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #FFFFFF;
+}
+.title {
+  margin: 2%;
+  text-align: center;
+}
 .buttonProperties {
   text-align: center;
   cursor: pointer;
@@ -22,10 +36,10 @@
 }
 .container {
   background-image: url('website-background.gif');
-  height: 450px;
-  width: 450px;
+  height: 500px;
+  width: 40%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 1%;
   position: center;
   border-radius: 25px;
   border-style: solid;
@@ -78,17 +92,19 @@ span {
   transition-duration: 0.4s;
   border: none;
   color: white;
-  background-color: #000000;
+  background-color: #232323;
   border-radius: 25px;
   font-size: 32px;
   margin-top: 2%;
+  border-style: solid;
+  border-color: #FFFFFF;
 }
 .submit:hover {
   background-color: #FFFFFF;
   color: black;
 }
 .startButton {
-  background-color: #000000;
+  background-color: #232323;
   color: #FFFFFF;
   border-radius: 25px;
   font-size: 35px;
@@ -100,20 +116,21 @@ span {
   background-color: white;
   color: black;
 }
-#input-box {
-  height: 28px;
-  width: 30%;
+#input-box-one,
+#input-box-two {
+  height: 50px;
+  width: 32%;
 }
 .food-calculator {
   background-image: url('website-background.gif');
-  height: 450px;
-  width: 250px;
+  margin-top: 1%;
+  height: 500px;
+  width: 40%;
   border-radius: 25px;
   border-style: solid;
   border-color: white;
   float: right;
-  margin-top: auto;
-  margin-right: 50px;
+  margin-right: 4%;
 }
 .workouts {
   background-image: url('website-background.gif');
@@ -127,27 +144,81 @@ span {
   margin-left: 50px;
 }
 a {
-  text-align: center;
   margin-top: 5%;
+  margin-left: 4%;
+  padding: 6%;
   font-size: 20px;
-  color: yellow;
   cursor: pointer;
   line-height: 5;
-  margin-left: 4%;
   text-decoration: none;
-  padding: 6%;
-  background-color: gray;
+  background-color: #232323;
+  color: #FFFFFF;
   border-radius: 25px;
+  text-align: center;
+  border-style: solid;
+  border-color: #FFFFFF;
 }
-.johnny,
-.johnny2,
-.johnny3 {
-  height: 200px;
-  width: 200px;
-  padding-top: 140px;
-  padding-left: 40px;
+a:hover {
+  background-color: white;
+  color: black;
+}
+#results-div {
+  float: left;
 }
 #article {
   z-index: 1;
+}
+#results-heading {
+  margin-top: 0;
+}
+#food-search-heading {
+  font-size: 20px;
+}
+.food-search {
+  float: left;
+  padding-left: 15%;
+}
+.foods {
+  font-size: 20px;
+  cursor: pointer;
+}
+.input-wrapper {
+  height: 10%;
+  text-align: center;
+}
+.back-button {
+  margin: -1% 40%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: none;
+  color: white;
+  background-color: #232323;
+  border-radius: 25px;
+  font-size: 32px;
+  border-style: solid;
+  border-color: #FFFFFF;
+}
+.back-button:hover {
+  background-color: #FFFFFF;
+  color: black;
+}
+#food-list {
+  font-size: 12px;
+  width: 60%;
+  cursor: pointer;
+  margin-left: 20%;
+}
+#nutrient-heading {
+  font-size: 22px;
+  margin-top: -3%;
+  text-align: center;
+}
+#nutrient-list {
+  margin-top: -4%;
+  margin-left: 20%;
+  width: 60%;
+  height: 72px;
 }
 /*# sourceMappingURL=fitness-quiz.1.0.0.css.map */
