@@ -241,7 +241,7 @@ a:hover {
 .food-button {
   display: none;
 }
-@media only screen and (max-width: 938px) {
+@media only screen and (max-width: 1000px) {
   .container {
     width: 90%;
     margin-top: 6%;
