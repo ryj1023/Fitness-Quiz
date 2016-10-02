@@ -1,6 +1,10 @@
 @black: #232323;
 @white: #FFFFFF;
 
+html{
+	min-height: 100%;
+}
+
 .background{
 	background-image: url('barbell.jpg');
 }
@@ -13,8 +17,10 @@
 .header{
 	background-image: url('website-background.gif');
     height: 75px;
-    width: 40%;
-	margin: 2% 30%;
+    width: 485px;
+	margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 28%;
     position: center;
     border-radius: 25px;
     border-style: solid;
@@ -41,8 +47,8 @@
 .container{
 	background-image: url('website-background.gif');
     height: 500px;
-    width: 40%;
-	margin: auto;
+    width: 485px;
+    margin-left: 28%;
 	margin-top: 1%;
     position: center;
     border-radius: 25px;
@@ -169,6 +175,7 @@ a{
 }
 #food-search-heading{
 	font-size: 20px;
+	margin-bottom: 0;
 }
 .food-search{
 	float: left;
@@ -195,16 +202,19 @@ a{
 		color: black;
 	}
 }
+// .food-list-container{
+// 	max-height: 500px;
+// }
 
 #food-list{
-	font-size: 12px;
+	font-size: 11px;
 	width: 60%;
 	cursor: pointer;
 	margin-left: 20%;
 }
 #nutrient-heading{
 	font-size: 22px;
-    margin-top: -3%;
+    margin-top: -4%;
     text-align: center
 }
 #nutrient-list{
@@ -212,6 +222,70 @@ a{
 	margin-left: 20%;
 	width: 60%;
 	height: 72px;
+}
+.list-group{
+	margin: 1% 20%;
+}
+.food-list-group{
+	padding-left: 0px;
+    margin-bottom: 2px;
+}
+#nutrient-list{
+	padding-left: 0px;
+    margin-bottom: 20px;
+}
+
+.food-button{
+	display: none;
+}
+
+@media only screen and (max-width: 938px){
+
+	.container{
+		width: 90%;
+		margin-top: 6%;
+		margin-left: 4% !important;
+
+	}
+	.header{
+		width: 90%;
+	    margin-left: 5%;
+	    margin-top: 2%;
+	}
+	h1{
+		font-size: 40px;
+	}
+	.title{
+		padding-top: 0;
+	}
+	.list-group{
+		margin: 1% 20%;
+	}
+	.food-calculator{
+		margin-top: 4%;
+		width: 90%;
+		margin-left: 9%;
+    	margin-right: 6%;
+	}
+	.food-list-group{
+		padding-left: 0px;
+    	margin-bottom: 20px;
+	}
+	.food-button{
+		display: inline;
+	}
+	#food-search-heading{
+		margin-top: 2%;
+	}
+	#nutrient-list{
+		margin-top: -2%;
+	}	
+	#nutrient-heading{
+		margin-top: -2%;
+	}
+	.back-button{
+		margin: 0% 43%;
+	}
 }
 
 

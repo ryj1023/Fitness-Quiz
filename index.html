@@ -15,37 +15,7 @@
   <div class="header">
       <h1 class="title">Let's Get Fit</h1>
     </div>
-      <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
-        <p id="food-search-heading">Search foods and select a workout</p>
-          <div class="input-wrapper">
-            <form method="get" ng-submit="selectFood()" class="food-search">
-              <input ng-change="submitFood()" id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
-              <!--button type="submit">submit</button-->
-            </form>
-            <form>
-              <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
-                <option value="Workouts" disabled selected>Workouts</option>
-                <option value="{{programs[0]}}">Low Intensity</option>
-                <option value="{{programs[1]}}">Medium Intensity</option>
-                <option value="{{programs[2]}}">High Intensity</option>
-              </select>
-            </form>
-           </div> 
-        <div ng-show="!foodObject">
-           <ul ng-repeat="food in foodFacts" class="list-group">
-            <li id="food-list" class="list-group-item list-group-item-info" data-value="{{food.foodId}}" ng-click="getNutritionFacts(food.foodId)">{{food.foodName}}</li>
-          </ul>
-        </div>
-        <div ng-show="foodObject">
-          <p id="nutrient-heading">Nutrients Per Cup </p>
-          <ul id="nutrient-list" class="list-group" ng-show="showNutrients(nutrient)" ng-repeat="nutrient in foodObject.nutrients">
-            <li class="list-group-item list-group-item-info">{{nutrient.name}}</li>
-            <li class="list-group-item list-group-item-warning">{{nutrient.value}}{{nutrient.unit}}</li> 
-          </ul>
-           <button class="back-button" ng-click="foodObject = null">back</button>
-        </div>
-      </div>
-      <div class="container">
+    <div class="container">
         <div ng-show="!startGame"  id="introDisplay">
           <h1 id="h1">{{heading}}</h1>
           <p class="Questions">{{subheading}}</p>
@@ -77,6 +47,36 @@
                   <button id= "ok" class="submit" ng-click="newGame()">New Plan</button>
                 </div> 
             </div>
+      </div>
+      <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
+        <p id="food-search-heading">Search foods and select a workout</p>
+          <div class="input-wrapper">
+            <form method="get" ng-submit="selectFood()" class="food-search">
+              <input ng-change="submitFood()" id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
+              <button class="food-button" type="submit" ng-click="submitFood()">submit</button>
+            </form>
+            <form>
+              <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
+                <option value="Workouts" disabled selected>Workouts</option>
+                <option value="{{programs[0]}}">Low Intensity</option>
+                <option value="{{programs[1]}}">Medium Intensity</option>
+                <option value="{{programs[2]}}">High Intensity</option>
+              </select>
+            </form>
+           </div> 
+        <div class="food-list-container" ng-show="!foodObject">
+           <ul ng-repeat="food in foodFacts" class="food-list-group">
+            <li id="food-list" class="list-group-item list-group-item-info" data-value="{{food.foodId}}" ng-click="getNutritionFacts(food.foodId)">{{food.foodName}}</li>
+          </ul>
+        </div>
+        <div class="food-list-container" ng-show="foodObject">
+          <p id="nutrient-heading">Nutrients Per Cup </p>
+          <ul id="nutrient-list" class="list-group" ng-show="showNutrients(nutrient)" ng-repeat="nutrient in foodObject.nutrients">
+            <li class="list-group-item list-group-item-info">{{nutrient.name}}</li>
+            <li class="list-group-item list-group-item-warning">{{nutrient.value}}{{nutrient.unit}}</li> 
+          </ul>
+           <button class="back-button" ng-click="foodObject = null">back</button>
+        </div>
       </div>
   </body>  
 </html>

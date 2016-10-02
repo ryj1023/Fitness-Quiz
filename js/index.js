@@ -62,7 +62,8 @@ page.config(function($routeProvider, $locationProvider){
       $scope.input2 = false;
       $scope.programs = [];
       $('.container').css('float', 'none');
-      $('.container').css('margin-left', 'auto');
+      $('.container').css('margin-left', '28%');
+      $('.container').css('margin-top', '1%');
 };
     $scope.openWindow = function(){
       $window.open($scope.workoutSelect)
@@ -129,7 +130,9 @@ page.config(function($routeProvider, $locationProvider){
       }
           else if($scope.count > 4){
             $('.container').css('float', 'left');
-            $('.container').css('margin-left', '4%');
+            $('.container').css('margin-right', '0');
+            $('.container').css('margin-left', '2%');
+
             $scope.calculateAnswers($scope.userAnswers[0], $scope.userAnswers[1], $scope.userAnswers[2], $scope.userAnswers[3], $scope.userAnswers[4], $scope.userAnswers[5]);
           }
     } 
@@ -253,7 +256,8 @@ page.config(function($routeProvider, $locationProvider){
             return;
         }
         else{
-       getFoodObject($scope.foodInput);
+       getFoodObject($scope.foodInput)
+
           }
      }
        $scope.showNutrients = function(nutrient){
@@ -280,8 +284,3 @@ page.config(function($routeProvider, $locationProvider){
         }
        }
 });
-
-
-
-//USDA API key Uexsdv07ZLPp9MU9LUtJQ5iEgASowWwa6s1yEcI8 
-
