@@ -51,11 +51,12 @@
       <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
         <p id="food-search-heading">Search foods and select a workout</p>
           <div class="input-wrapper">
-            <form method="get" ng-submit="selectFood()" class="food-search">
-              <input ng-change="submitFood()" id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
-              <button class="food-button" type="submit" ng-click="submitFood()">submit</button>
+            <form method="get" class="food-search">
+              <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
+              <!--button class="food-button" type="submit" ng-click="foodObject = null; submitFood();">submit</button-->
             </form>
             <form>
+             <button class="food-button" type="submit" ng-click="foodObject = null; submitFood()">submit</button>
               <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
                 <option value="Workouts" disabled selected>Workouts</option>
                 <option value="{{programs[0]}}">Low Intensity</option>
@@ -64,6 +65,7 @@
               </select>
             </form>
            </div> 
+
         <div class="food-list-container" ng-show="!foodObject">
            <ul ng-repeat="food in foodFacts" class="food-list-group">
             <li id="food-list" class="list-group-item list-group-item-info" data-value="{{food.foodId}}" ng-click="getNutritionFacts(food.foodId)">{{food.foodName}}</li>

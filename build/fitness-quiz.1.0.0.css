@@ -239,7 +239,8 @@ a:hover {
   margin-bottom: 20px;
 }
 .food-button {
-  display: none;
+  float: left;
+  margin-left: 1%;
 }
 @media only screen and (max-width: 1000px) {
   .container {
@@ -249,7 +250,7 @@ a:hover {
   }
   .header {
     width: 90%;
-    margin-left: 5%;
+    margin-left: 4%;
     margin-top: 2%;
   }
   h1 {
@@ -272,7 +273,8 @@ a:hover {
     margin-bottom: 20px;
   }
   .food-button {
-    display: inline;
+    float: left;
+    margin-left: 1%;
   }
   #food-search-heading {
     margin-top: 2%;

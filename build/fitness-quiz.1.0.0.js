@@ -75,9 +75,10 @@
 	  $scope.userAnswers = [];
 	  $scope.programs = "";
 	  $scope.foodInput = "";
-	  $scope.foodObject = false;
+	  $scope.foodObject = null;
 	  $scope.workoutSelect;
 	  $scope.heightTotal = null;
+	
 	  $scope.hideFunction = function () {
 	    $scope.show = !$scope.show;
 	  };
@@ -271,6 +272,7 @@
 	      params: request
 	    }).then(function (response) {
 	      $scope.foodObject = response.data.report.food;
+	      console.log($scope.foodObject);
 	      $scope.showNutrients($scope.foodObject);
 	    });
 	  };
@@ -279,7 +281,9 @@
 	      alert('please input a food to search');
 	      return;
 	    } else {
+	
 	      getFoodObject($scope.foodInput);
+	      $scope.foodObject = null;
 	    }
 	  };
 	  $scope.showNutrients = function (nutrient) {

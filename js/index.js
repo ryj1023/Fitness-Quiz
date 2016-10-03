@@ -28,9 +28,10 @@ page.config(function($routeProvider, $locationProvider){
         $scope.userAnswers = [];
         $scope.programs = "";
         $scope.foodInput = "";
-        $scope.foodObject = false;
+        $scope.foodObject = null;
         $scope.workoutSelect;
         $scope.heightTotal = null;
+
       $scope.hideFunction = function(){      
         $scope.show = !$scope.show  
     }
@@ -247,6 +248,7 @@ page.config(function($routeProvider, $locationProvider){
         })
         .then(function(response) {
           $scope.foodObject = response.data.report.food;
+          console.log($scope.foodObject)
           $scope.showNutrients($scope.foodObject);
         })
        }
@@ -256,8 +258,9 @@ page.config(function($routeProvider, $locationProvider){
             return;
         }
         else{
+          
        getFoodObject($scope.foodInput)
-
+       $scope.foodObject = null;
           }
      }
        $scope.showNutrients = function(nutrient){
