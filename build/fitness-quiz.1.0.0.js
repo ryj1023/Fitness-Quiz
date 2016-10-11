@@ -246,7 +246,7 @@
 	    };
 	    $http({
 	      method: 'GET',
-	      url: "http://api.nal.usda.gov/ndb/search/?format=json",
+	      url: "https://api.nal.usda.gov/ndb/search/?format=json",
 	      params: request
 	    }).then(function (objects) {
 	      $scope.foodFacts = [];
@@ -269,7 +269,7 @@
 	    };
 	    $http({
 	      method: 'GET',
-	      url: "http://api.nal.usda.gov/ndb/reports/",
+	      url: "https://api.nal.usda.gov/ndb/reports/",
 	      params: request
 	    }).then(function (response) {
 	      $scope.foodObject = response.data.report.food;
