@@ -9,6 +9,7 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="fitness-quiz.1.0.0.js"></script>
     <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="../node_modules/angular-touch/angular-touch.js"></script>
     <base href="/Fitness-Quiz-2.0/Fitness-Quiz/build/">
   </head>
   <body class="background">
@@ -65,7 +66,6 @@
               </select>
             </form>
            </div> 
-
         <div class="food-list-container" ng-show="!foodObject">
            <ul ng-repeat="food in foodFacts" class="food-list-group">
             <li id="food-list" class="list-group-item list-group-item-info" data-value="{{food.foodId}}" ng-click="getNutritionFacts(food.foodId)">{{food.foodName}}</li>

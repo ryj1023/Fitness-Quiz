@@ -1,7 +1,8 @@
 let angular = require('angular');
 let $ = require('jquery');
 let ngRoute = require('angular-route');
-let page = angular.module('app', ['ngRoute']);
+let ngTouch = require('angular-touch');
+let page = angular.module('app', ['ngRoute', 'ngTouch']);
 page.config(function($routeProvider, $locationProvider){ 
     $routeProvider.when('/description', {
       templateUrl: 'description.html',
