@@ -183,6 +183,7 @@ a:hover {
 .food-search {
   float: left;
   padding-left: 15%;
+  width: 69%;
 }
 .foods {
   font-size: 20px;
@@ -239,7 +240,7 @@ a:hover {
 }
 #nutrient-list {
   padding-left: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .food-button {
   float: left;
@@ -252,9 +253,10 @@ a:hover {
     margin-left: 4% !important;
   }
   .header {
+    padding-bottom: 9%;
     width: 90%;
     margin-left: 4%;
-    margin-top: 2%;
+    margin-top: 1%;
   }
   .title {
     padding-top: 0;
@@ -262,8 +264,14 @@ a:hover {
   .list-group {
     margin: 1% 20%;
   }
+  .food-search {
+    float: left;
+    padding-left: 15%;
+    width: 66%;
+  }
   .food-calculator {
     margin-top: 4%;
+    margin-bottom: 4%;
     width: 90%;
     margin-left: 9%;
     margin-right: 6%;

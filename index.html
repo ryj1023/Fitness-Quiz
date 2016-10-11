@@ -28,8 +28,10 @@
           <div ng-show="startGame && hasQuestion();">
               <h1 id="title">{{currentQuestion.question}}</h1>
                 <form ng-submit="submitAnswer()">
-                  <div class="answer" ng-repeat="answer in currentQuestion.answers">
-                  <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option" placeholder="select a value">
+                  <div class="answer" ng-repeat="answer in currentQuestion.answers"> 
+                      <label>
+                      <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option" placeholder="select a value">
+                      </label>
                   <span>{{answer}}</span>
                   </div>
                   <input id="input-box-one" ng-show="input" ng-model="numbers" name='choice' type="text" class="option" placeholder="please enter a number">
@@ -55,15 +57,15 @@
             <form method="get" class="food-search">
             </form>
             <form ng-submit="submitFood()" class="food-search">
-            <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
-             <button class="food-button" ng-click="foodObject = null; submitFood()">submit</button>
+              <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
+               <button class="food-button" ng-click="foodObject = null; submitFood()">submit</button>
+            </form>
               <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
                 <option value="Workouts" disabled selected>Workouts</option>
                 <option value="{{programs[0]}}">Low Intensity</option>
                 <option value="{{programs[1]}}">Medium Intensity</option>
                 <option value="{{programs[2]}}">High Intensity</option>
               </select>
-            </form>
            </div> 
         <div class="food-list-container" ng-show="!foodObject">
            <ul ng-repeat="food in foodFacts" class="food-list-group">
