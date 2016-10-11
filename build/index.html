@@ -53,9 +53,9 @@
         <p id="food-search-heading">Search foods and select a workout</p>
           <div class="input-wrapper">
             <form method="get" class="food-search">
-              <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
             </form>
-            <form ng-submit="submitFood()">
+            <form ng-submit="submitFood()" class="food-search">
+            <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
              <button class="food-button" ng-click="foodObject = null; submitFood()">submit</button>
               <select ng-model="workoutSelect" ng-change="openWindow()" name="workouts" ng-init="workoutSelect = 'Workouts'">
                 <option value="Workouts" disabled selected>Workouts</option>
