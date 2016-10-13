@@ -9,14 +9,13 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="fitness-quiz.1.0.0.js"></script>
     <script src="../node_modules/angular-route/angular-route.js"></script>
-    <script src="../node_modules/angular-touch/angular-touch.js"></script>
     <base href="/Fitness-Quiz-2.0/Fitness-Quiz/build/">
   </head>
   <body class="background">
   <div class="header">
       <h1 class="title">Let's Get Fit</h1>
     </div>
-    <div class="container">
+    <section class="container">
         <div ng-show="!startGame"  id="introDisplay">
           <h1 id="h1">{{heading}}</h1>
           <p class="Questions">{{subheading}}</p>
@@ -32,7 +31,7 @@
                       <label>
                       <input ng-value="$index" ng-model="choice.value" name='choice' type="radio" class="option" placeholder="select a value">
                       </label>
-                  <span>{{answer}}</span>
+                    <span>{{answer}}</span>
                   </div>
                   <input id="input-box-one" ng-show="input" ng-model="numbers" name='choice' type="text" class="option" placeholder="please enter a number">
                   <input id="input-box-two" ng-show="input2" ng-model="numbersTwo" name='choice' type="text" class="option-two">
@@ -50,12 +49,10 @@
                   <button id= "ok" class="submit" ng-click="newGame()">New Plan</button>
                 </div> 
             </div>
-      </div>
-      <div ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
+      </section>
+      <section ng-show="startGame && !hasQuestion()" class="food-calculator" id="weights" >
         <p id="food-search-heading">Search foods and select a workout</p>
           <div class="input-wrapper">
-            <form method="get" class="food-search">
-            </form>
             <form ng-submit="submitFood()" class="food-search">
               <input id="input-food" list="foods" name="foods" ng-model="foodInput" placeholder="Enter a food">
                <button class="food-button" ng-click="foodObject = null; submitFood()">submit</button>
@@ -80,6 +77,6 @@
           </ul>
            <button class="back-button" ng-click="foodObject = null">back</button>
         </div>
-      </div>
+      </section>
   </body>  
 </html>

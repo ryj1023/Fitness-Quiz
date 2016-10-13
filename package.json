@@ -46,6 +46,7 @@
     "angular": "^1.5.7",
     "angular-route": "^1.5.8",
     "angular-touch": "^1.5.7",
+    "chokidar": "^1.6.0",
     "jquery": "^3.0.0"
   },
   "devDependencies": {

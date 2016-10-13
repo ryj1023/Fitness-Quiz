@@ -205,12 +205,6 @@ page.config(function($routeProvider, $locationProvider){
         }
       };
     var getFoodObject = function(food){
-      var text = food.split(" ");
-      for(var i=0;i<text.length;i++){
-        if(text[i].length<4)
-          return
-      }
-        if(food.length < 4) return
       var request = {
         api_key: "Uexsdv07ZLPp9MU9LUtJQ5iEgASowWwa6s1yEcI8",
         q: food,
@@ -249,7 +243,6 @@ page.config(function($routeProvider, $locationProvider){
         })
         .then(function(response) {
           $scope.foodObject = response.data.report.food;
-          console.log($scope.foodObject)
           $scope.showNutrients($scope.foodObject);
         })
        }
@@ -271,20 +264,5 @@ page.config(function($routeProvider, $locationProvider){
           else{
             return false;
           }
-       }
-       $scope.selectFood = function(dataList){
-        $scope.userFoodInfo = [];
-        var food = angular.element(document).find("#inputFood").val();
-          for(var i = 0; i<$scope.foodFacts.length; i++){
-            $scope.foodObject = $scope.foodFacts[i];
-            $scope.userFood = $scope.foodFacts[i].foodName;
-            $scope.userFoodId = $scope.foodFacts[i].foodName;
-          if(food == $scope.userFood){
-            var foodObjectId = $scope.foodObject.foodId;
-            var foodObjectName = $scope.userFood;
-            $scope.userFoodInfo.push({foodId: foodObjectId, foodName: foodObjectName})
-            $scope.getNutritionFacts($scope.userFoodInfo[0].foodId);
-          }
-        }
        }
 });
