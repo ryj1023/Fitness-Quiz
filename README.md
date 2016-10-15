@@ -5,7 +5,9 @@ Fitness assessment portfolio project
 
 <h1>Screenshots</h1>
 
-![Screenshot](https://github.com/ryj1023/Around-The-World/blob/master/Sreenshot.png)
+![Screenshot](https://github.com/ryj1023/Fitness-Quiz/blob/master/Screenshot1.png)
+![Screenshot](https://github.com/ryj1023/Fitness-Quiz/blob/master/Screenshot2.png)
+![Screenshot](https://github.com/ryj1023/Fitness-Quiz/blob/master/Screenshot3.png)
 
 
 
