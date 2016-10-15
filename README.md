@@ -1,10 +1,11 @@
-# Fitness-Quiz
 
 <h1>How Fit Are You?</h1>
 
 Fitness assessment portfolio project
 
 <h1>Screenshots</h1>
+
+![Screenshot](https://github.com/ryj1023/Around-The-World/blob/master/Sreenshot.png)
 
 
 
