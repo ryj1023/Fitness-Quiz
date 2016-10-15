@@ -25,7 +25,7 @@ The UX in this app is designed to be user friendly and fluid. the user is prompt
 
 <h1>Working Prototype</h1>
 
-You can access a working prototype of the app here:
+You can access a working prototype of the app here: http://ryj1023.github.io/Fitness-Quiz/build/
 
 <h1>Technical</h1>
 
