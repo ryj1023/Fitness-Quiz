@@ -27,10 +27,19 @@ The UX in this app is designed to be user friendly and fluid. the user is prompt
 
 You can access a working prototype of the app here: http://ryj1023.github.io/Fitness-Quiz/build/
 
+<h1>Features</h1>
+
+* Questions are displayed using ng-show and a counter variable to toggle through an array with each question. 
+* Object used to calculate the users Basal Metabolic Rate. 
+* Daily calories, protein, carbohydrates, and fats are displayed to the user based on the user answer object. 
+* Displayed using the ng-repeat directive. 
+* API is called which takes the foodID number and returns the nutrition facts to the user. The workout select dropdown has three options for workout plans the user can choose from, all located in separate arrays.
+* Mobile responsive, and switches to a single column layout for screens that have a width less than 1000 pixels.
+
 <h1>Technical</h1>
 
-The app is built using AngularJS for the front-end. The questions are displayed using ng-show and a counter variable to toggle through an array with each question. When the user enters in a valid response, the answer is then pushed into a new object and is used to calculate the users Basal Metabolic Rate. A function is called with the formula for the BMR, and the daily calories, protein, carbohydrates, and fats are displayed to the user based on the user answer object. When a user makes types makes a query to return a list of foods, a function is called that takes the food name and is passed into a USDA API, then returns all foods that match that keyword. This call is used with Angular's HTTP method, and displayed using the ng-repeat directive. The user then selects a food from the list, and a separate API is called which takes the foodID number and returns the nutrition facts to the user. The workout select dropdown has three options for workout plans the user can choose from, all located in separate arrays.
-The app is mobile responsive, and switches to a single column layout for screens that have a width less than 1000 pixels.
+* Built using AngularJS for the front-end.
+* Uses Angular's HTTP method for API calls.
 
 <h1>Upcoming Features</h1>
 
