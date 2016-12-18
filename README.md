@@ -1,16 +1,3 @@
-# Fitness-Quiz
-
-<h1>How Fit Are You?</h1>
-
-Fitness assessment portfolio project
-
-<h1>Screenshots</h1>
-
-
-
-<h1>Overview</h1>
-
-This fitness assessment is a perfect platform for users all over the fitness spectrum. It is made to obtain information about the user by asking a series of questions about weight, height, goals, and current fitness activity. It then takes this information, displays a reccommended daily nutrient intake, allows a food search which returns nutrient information, and selects custom workout regimens for the user. 
 
 <h1>How Fit Are You?</h1>
 
@@ -51,9 +38,10 @@ You can access a working prototype of the app here: http://ryj1023.github.io/Fit
 
 <h1>Technical</h1>
 
-* Built using AngularJS for the front-end.
-* Uses Angular's HTTP method for API calls.
+The application is built using AngularJS for the front-end, and makes use of Angular's HTTP method.
+
 
 <h1>Upcoming Features</h1>
 
-Future features will include back-end functionality using NodeJS, MongoDB, and Express from the MEAN stack to allow the user to have personal profiles and save their customized settings. It will allow the user to select foods from the USDA API and store them in a database for the user to plan out their meals on any given day.
+* Back-end functionality using NodeJS, MongoDB, and Express from the MEAN stack to allow the user to have personal profiles and save their customized settings.
+* Functionality to allow the user to select foods from the USDA API and store them in a database for the user to plan out their meals on any given day.
